@@ -2,8 +2,13 @@ import React from "react";
 import get from "lodash.get";
 import logo from "../assets/logo.png";
 import ListingCards from "./listing_cards";
-import Locate from "../icons/locate";
-import MapPin from "../icons/map-pin";
+import { 
+    Delivery,
+    Dispensary,
+    Doctor,
+    Locate,
+    MapPin
+} from "../icons";
 import {
   AppHeader,
   AppWrapper,
@@ -43,11 +48,31 @@ function App() {
       });
     }
   }
-
-  function getLabel(listings: any, label: string) {
+  function setIcon(label: string) {
+    let width = "30px";
+    let height = "30px";
+    let fill = "#7e7979";
+    switch(label){
+      case "Deliveries":
+        return (
+          < Delivery fill={fill} width={width} height={height} />
+        )
+      case "Dispensaries":
+        return (
+          < Dispensary fill={fill} width={width} height={height} />
+        )
+      case "Doctors": 
+        return (
+          < Doctor fill={fill} width={width} height={height} />
+        )  
+    }
+  }
+  function getLabel(listings: any, label: string) { 
+    console.log(listings,label)
     if (get(listings, "listings").length) {
       return (
         <div key={label}>
+          {setIcon(label)}
           <strong> {label} </strong>
         </div>
       );
@@ -69,7 +94,7 @@ function App() {
               <span> {isLocating && !location ? "...locating" : ""} </span>
             </h2>
             <LocateButton onClick={locateMe}>
-              <Locate fill={"#7e7979"} />
+              <Locate fill={"#7e7979"} width={"30px"} height={"20px"}/>
               <span> Locate Me </span>
             </LocateButton>
           </LocationSection>
