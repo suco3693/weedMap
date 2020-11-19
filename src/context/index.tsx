@@ -50,7 +50,10 @@ export function useGlobal(
     setIsLocating(true);
     fetch(url, options)
       .then(res => {
-        res.json();
+        // check if response is ok and stream is done before turning to json
+        if(res.ok){
+          return res.json();
+        }
       })
       .then((json: any) => {
         setLocation(json.data.location);
