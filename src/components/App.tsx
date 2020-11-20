@@ -33,6 +33,17 @@ const regionLabels: {
   dispensary: "Dispensaries",
   doctor: "Doctors"
 };
+// TODO Remove and add back in locater
+let fakeLocate = {
+  "accuracy": 71,
+  "altitude": null,
+  "altitudeAccuracy": null,
+  "heading": null,
+  "latitude": 33.666614,
+  "longitude": -117.756295,
+  "speed": null
+}
+
 
 function App() {
   const values = React.useContext(GlobalContext);
@@ -44,13 +55,14 @@ function App() {
   function locateMe() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        locate(position.coords);
+        // locate(position.coords);
+        locate(fakeLocate);
       });
     }
   }
   function setIcon(label: string) {
-    let width = "30px";
-    let height = "30px";
+    let width = "20px";
+    let height = "20px";
     let fill = "#7e7979";
     switch(label){
       case "Deliveries":
@@ -68,7 +80,6 @@ function App() {
     }
   }
   function getLabel(listings: any, label: string) { 
-    console.log(listings,label)
     if (get(listings, "listings").length) {
       return (
         <div key={label}>

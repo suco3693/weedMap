@@ -18,12 +18,14 @@ export const AppHeader = styled.div`
 export const AppWrapper = styled.div`
   margin-bottom: 20px;
   text-align: center;
+  background-color: #F2F5F5;
 `;
 
 export const AppContent = styled.div`
   width: 90%;
   max-width: 1200px;
   margin: 10px auto;
+  
 `;
 
 export const ListingGroups = styled.div`
@@ -32,6 +34,7 @@ export const ListingGroups = styled.div`
     text-align: left;
   }
 `;
+
 
 export const HeroSection = styled.div`
   background-color: white;
