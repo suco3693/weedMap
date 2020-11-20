@@ -3,6 +3,7 @@ export const InfoWrapper = styled.div`
   display: flex;
   align-items: start;
   flex-direction: column;
+  padding: 0.5em;
   div {
       padding: 0.25em;
   }

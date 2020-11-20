@@ -1,7 +1,7 @@
 import React from "react";
 export const HalfStar = () => ( 
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-        width="1.4em" height="1.4em"
+        width="1.25em" height="1.25em"
         viewBox="0 0 172 172"
         fill="#000000" 
     >
