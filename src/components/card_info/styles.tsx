@@ -3,6 +3,9 @@ export const InfoWrapper = styled.div`
   display: flex;
   align-items: start;
   flex-direction: column;
+  div {
+      padding: 0.25em;
+  }
 `;
 
 export const LocationWrapper = styled.div`

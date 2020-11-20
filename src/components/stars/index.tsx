@@ -1,26 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  EmptyStar, 
-  FullStar,
-  HalfStar
-} from "../../icons"
+import StarSet from "./star-sets";
 
 const StarWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  div {
+    font-size: 0.75em;
+    color: #a4a2a2;
+    padding: 0em 0.1em;
+  }
 `;
 
-const roundStar = (rating: string): number => {
-  return Math.round(parseFloat(rating)*2)/2;
-}
-
-const Stars = ({ rating }: { rating: string }) => (
+const Stars = ({ rating }: { rating: number }) => (
   <StarWrapper>
-    <EmptyStar />
-    <FullStar />
-    <HalfStar />
-    <div> {parseFloat(rating).toFixed(1)} </div>
+    <StarSet rating={rating} />
+    <div> {rating} </div>
   </StarWrapper>
 );
 

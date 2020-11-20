@@ -7,6 +7,10 @@ import {
 import Stars from "../stars";
 
 //TODO convert listing.state to Abbrive
+let roundNumber = (rating: string): number =>{
+    return parseFloat(parseFloat(rating).toFixed(1));
+}
+
 const CardInfo = ({ listing }: { listing: any }) => (
   <InfoWrapper>
     <LocationWrapper>
@@ -15,7 +19,7 @@ const CardInfo = ({ listing }: { listing: any }) => (
         <div> {listing.distance.toFixed(0)}mi </div>
     </LocationWrapper>
     <Name>{listing.name}</Name>
-    <Stars rating={listing.rating} />
+    <Stars rating={roundNumber(listing.rating)} />
   </InfoWrapper>
 );
 
