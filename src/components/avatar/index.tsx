@@ -7,6 +7,7 @@ const ImgWrapper = styled.div<{ width: string; height: string }>`
     height: ${props => props.height};
     object-fit: cover;
   }
+  margin: 1em;
 `;
 
 const Avatar = (

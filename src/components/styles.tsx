@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const AppHeader = styled.div`
+export const AppHeader = styled.div<{isMobile: boolean}>`
+  ${({isMobile})=> isMobile? "padding: 0 20px;": "padding: 0 20vw;"}
   height: 70px;
   display: flex;
-  padding: 0 20px;
   justify-content: space-between;
   align-items: center;
   background-color: #222;
@@ -16,14 +16,41 @@ export const AppHeader = styled.div`
 `;
 
 export const AppWrapper = styled.div`
-  margin-bottom: 20px;
   text-align: center;
+  background-color: #F2F5F5;
 `;
 
-export const AppContent = styled.div`
-  width: 90%;
-  max-width: 1200px;
+export const AppContainer = styled.div`
+   min-height: 85vh;
+`;
+export const AppFooter = styled.div`
+  height: 15vh;
+  display: block;
+  width: 100%;
+  background-color: #222222;
+`;
+
+export const AppFooterBar = styled.div`
+  height: 2em;
+  display: block;
+  width: 100%;
+  background-color: #00CDBE;
+`;
+
+export const AppContent = styled.div<{isMobile: boolean}>`
+  ${({isMobile})=> isMobile? "max-width: 90%;": "max-width: 50%;"}
+  min-height: 50vh;
   margin: 10px auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end;
+`;
+
+export const Regions = styled.div<{isMobile: boolean}>`
+ ${({isMobile})=> isMobile? "width: 100%;": "width: 90%;"}
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ListingGroups = styled.div`
@@ -31,6 +58,17 @@ export const ListingGroups = styled.div`
   h2 {
     text-align: left;
   }
+  ${(props) => {
+    switch(props.theme){
+      case "Dispensaries":
+        return "order: 1"
+      case "Deliveries": 
+        return "order: 2"
+      case "Doctors": 
+        return "order: 3" 
+    }
+
+    }}
 `;
 
 export const HeroSection = styled.div`
@@ -53,8 +91,8 @@ export const HeroSection = styled.div`
   }
 `;
 
-export const ContentContainer = styled.div`
-  width: 100%;
+export const ContentContainer = styled.div<{isMobile: boolean}>`
+  ${({isMobile})=> isMobile? "width: 100%;": "width: 60%;"}
   max-width: 1200px;
   padding: 16px;
 `;
@@ -92,8 +130,4 @@ export const LocateButton = styled.a`
   font-size: 12px;
   cursor: pointer;
   text-transform: uppercase;
-
-  svg {
-    margin-right: 5px;
-  }
 `;
