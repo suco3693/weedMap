@@ -42,3 +42,4 @@ export function getLabel(listings: any, label: string) {
   }
 
   export default getLabel;
+  

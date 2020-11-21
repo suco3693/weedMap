@@ -18,4 +18,4 @@ export {
     EmptyStar,
     FullStar,
     HalfStar,
-}
+};

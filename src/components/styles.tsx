@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const AppHeader = styled.div<{isMobile: boolean}>`
   ${({isMobile})=> isMobile? "padding: 0 20px;": "padding: 0 20vw;"}
   height: 70px;
@@ -130,5 +131,3 @@ export const LocateButton = styled.a`
   cursor: pointer;
   text-transform: uppercase;
 `;
-
-
