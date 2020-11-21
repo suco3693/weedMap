@@ -25,7 +25,12 @@ export const AppContent = styled.div`
   width: 90%;
   max-width: 1200px;
   margin: 10px auto;
-  
+`;
+
+export const Regions = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ListingGroups = styled.div`
@@ -33,8 +38,18 @@ export const ListingGroups = styled.div`
   h2 {
     text-align: left;
   }
-`;
+  ${(props) => {
+    switch(props.theme){
+      case "Dispensaries":
+        return "order: 1"
+      case "Deliveries": 
+        return "order: 2"
+      case "Doctors": 
+        return "order: 3" 
+    }
 
+    }}
+`;
 
 export const HeroSection = styled.div`
   background-color: white;

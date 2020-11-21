@@ -2,10 +2,8 @@ import React from "react";
 import get from "lodash.get";
 import logo from "../assets/logo.png";
 import ListingCards from "./listing_cards";
+import getLabel from "./listing_label";
 import { 
-    Delivery,
-    Dispensary,
-    Doctor,
     Locate,
     MapPin
 } from "../icons";
@@ -13,6 +11,7 @@ import {
   AppHeader,
   AppWrapper,
   AppContent,
+  Regions,
   ListingGroups,
   HeroSection,
   ContentContainer,
@@ -60,37 +59,6 @@ function App() {
       });
     }
   }
-  function setIcon(label: string) {
-    let width = "20px";
-    let height = "20px";
-    let fill = "#7e7979";
-    switch(label){
-      case "Deliveries":
-        return (
-          < Delivery fill={fill} width={width} height={height} />
-        )
-      case "Dispensaries":
-        return (
-          < Dispensary fill={fill} width={width} height={height} />
-        )
-      case "Doctors": 
-        return (
-          < Doctor fill={fill} width={width} height={height} />
-        )  
-    }
-  }
-  function getLabel(listings: any, label: string) { 
-    if (get(listings, "listings").length) {
-      return (
-        <div key={label}>
-          {setIcon(label)}
-          <strong> {label} </strong>
-        </div>
-      );
-    }
-    return <div />;
-  }
-
   return (
     <AppWrapper>
       <AppHeader>
@@ -119,16 +87,14 @@ function App() {
       <AppContent>
         {error && error.length && <div> {error} </div>}
         {regions && !!Object.entries(regions).length && (
-          <React.Fragment>
+          <Regions>
             {regionTypes.map((regionType: RetailerType) => (
-              <ListingGroups key={regionType}>
-                <h2>
-                  {getLabel(regions[regionType], regionLabels[regionType])}
-                </h2>
+              <ListingGroups key={regionLabels[regionType]} theme={regionLabels[regionType]}> 
+                {getLabel(regions[regionType], regionLabels[regionType])}
                 <ListingCards listings={get(regions[regionType], "listings")} />
               </ListingGroups>
             ))}
-          </React.Fragment>
+          </Regions>
         )}
       </AppContent>
     </AppWrapper>
