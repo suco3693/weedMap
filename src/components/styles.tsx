@@ -36,8 +36,8 @@ export const AppFooterBar = styled.div`
   background-color: #00CDBE;
 `;
 
-export const AppContent = styled.div`
-  max-width: 50%;
+export const AppContent = styled.div<{isMobile: boolean}>`
+  ${({isMobile})=> isMobile? "max-width: 90%;": "max-width: 50%;"}
   min-height: 50vh;
   margin: 10px auto;
   display: flex;
@@ -45,8 +45,9 @@ export const AppContent = styled.div`
   align-items: flex-end;
 `;
 
-export const Regions = styled.div`
-  width: 90%;
+export const Regions = styled.div<{isMobile: boolean}>`
+ ${({isMobile})=> isMobile? "width: 100%;": "width: 90%;"}
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -89,8 +90,8 @@ export const HeroSection = styled.div`
   }
 `;
 
-export const ContentContainer = styled.div`
-  width: 60%;
+export const ContentContainer = styled.div<{isMobile: boolean}>`
+  ${({isMobile})=> isMobile? "width: 100%;": "width: 60%;"}
   max-width: 1200px;
   padding: 16px;
 `;

@@ -7,7 +7,7 @@ import CardInfo from "../card_info";
 import styled from "styled-components";
 import get from "lodash.get";
 
-const DesktopWrapper = styled.div`
+const ListingCardWrapper = styled.div<{isMobile: boolean}>`
   height: 6em;
   display: flex;
   align-items: center;
@@ -16,30 +16,15 @@ const DesktopWrapper = styled.div`
   margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0.025em 0.025em;
+  ${({isMobile})=> isMobile? "justify-content: space-between;": "justify-content: flex-start;"}
 `;
 
-const MobileWrapper = styled(DesktopWrapper)`
-    justify-content: space-between;
-    margin-bottom: 1em;
-  border-radius: 0.5em;
-`;
 
-const ListingCard = ({ listing }: { listing: any }) => {
-  if(isMobile){
-    return (
-      <MobileWrapper >
-        <CardInfo listing={listing} />
-        <Avatar img={`${get(listing, "avatar_image.small_url")}`}/>
-    </MobileWrapper>
-    )
-  }else{
-    return ( 
-      <DesktopWrapper>
+const ListingCard = ({ listing }: { listing: any }) => ( 
+      <ListingCardWrapper isMobile={isMobile}>
         <Avatar img={`${get(listing, "avatar_image.small_url")}`} />
         <CardInfo listing={listing} />
-      </DesktopWrapper>
-    )
-  }
-};
+      </ListingCardWrapper>
+);
 
 export default ListingCard;
