@@ -56,7 +56,7 @@ function App() {
   return (
     <AppWrapper>
       <AppContainer>
-        <AppHeader>
+        <AppHeader isMobile={isMobile}>
           <img src={logo} alt="weedmaps logo" />
         </AppHeader>
         <HeroSection>
