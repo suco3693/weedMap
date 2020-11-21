@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const AppHeader = styled.div`
   height: 70px;
   display: flex;
@@ -16,19 +15,38 @@ export const AppHeader = styled.div`
 `;
 
 export const AppWrapper = styled.div`
-  margin-bottom: 20px;
   text-align: center;
   background-color: #F2F5F5;
 `;
 
+export const AppContainer = styled.div`
+   min-height: 85vh;
+`;
+export const AppFooter = styled.div`
+  height: 15vh;
+  display: block;
+  width: 100%;
+  background-color: #222222;
+`;
+
+export const AppFooterBar = styled.div`
+  height: 2em;
+  display: block;
+  width: 100%;
+  background-color: #00CDBE;
+`;
+
 export const AppContent = styled.div`
-  width: 90%;
-  max-width: 1200px;
+  max-width: 50%;
+  min-height: 50vh;
   margin: 10px auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end;
 `;
 
 export const Regions = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
 `;
@@ -72,7 +90,7 @@ export const HeroSection = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  width: 100%;
+  width: 60%;
   max-width: 1200px;
   padding: 16px;
 `;
@@ -110,8 +128,6 @@ export const LocateButton = styled.a`
   font-size: 12px;
   cursor: pointer;
   text-transform: uppercase;
-
-  svg {
-    margin-right: 5px;
-  }
 `;
+
+

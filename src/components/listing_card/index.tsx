@@ -19,7 +19,9 @@ const DesktopWrapper = styled.div`
 `;
 
 const MobileWrapper = styled(DesktopWrapper)`
-    justify-content: space-between
+    justify-content: space-between;
+    margin-bottom: 1em;
+  border-radius: 0.5em;
 `;
 
 const ListingCard = ({ listing }: { listing: any }) => {
@@ -27,7 +29,7 @@ const ListingCard = ({ listing }: { listing: any }) => {
     return (
       <MobileWrapper >
         <CardInfo listing={listing} />
-        <Avatar img={`${get(listing, "avatar_image.small_url")}`} />
+        <Avatar img={`${get(listing, "avatar_image.small_url")}`}/>
     </MobileWrapper>
     )
   }else{

@@ -10,6 +10,7 @@ import {
 import {
   AppHeader,
   AppWrapper,
+  AppContainer,
   AppContent,
   Regions,
   ListingGroups,
@@ -17,7 +18,9 @@ import {
   ContentContainer,
   LocationSection,
   TextContent,
-  LocateButton
+  LocateButton,
+  AppFooter,
+  AppFooterBar
 } from "./styles";
 import { GlobalContext, EMPTY } from "../context";
 
@@ -32,17 +35,6 @@ const regionLabels: {
   dispensary: "Dispensaries",
   doctor: "Doctors"
 };
-// TODO Remove and add back in locater
-let fakeLocate = {
-  "accuracy": 71,
-  "altitude": null,
-  "altitudeAccuracy": null,
-  "heading": null,
-  "latitude": 33.666614,
-  "longitude": -117.756295,
-  "speed": null
-}
-
 
 function App() {
   const values = React.useContext(GlobalContext);
@@ -54,49 +46,53 @@ function App() {
   function locateMe() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        // locate(position.coords);
-        locate(fakeLocate);
+        locate(position.coords);
       });
     }
   }
   return (
     <AppWrapper>
-      <AppHeader>
-        <img src={logo} alt="weedmaps logo" />
-      </AppHeader>
-      <HeroSection>
-        <ContentContainer>
-          <LocationSection>
-            <h2>
-              <MapPin fill={"#7e7979"} width={"60px"} height={"40px"} />
-              <span> {location ? location.name : ""} </span>
-              <span> {isLocating && !location ? "...locating" : ""} </span>
-            </h2>
-            <LocateButton onClick={locateMe}>
-              <Locate fill={"#7e7979"} width={"30px"} height={"20px"}/>
-              <span> Locate Me </span>
-            </LocateButton>
-          </LocationSection>
-          <TextContent>
-            Lorem Ipsum dolor sit amet, consectetur adispiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aligqua. Ut enim
-            ad minim veniam, quis.
-          </TextContent>
-        </ContentContainer>
-      </HeroSection>
-      <AppContent>
-        {error && error.length && <div> {error} </div>}
-        {regions && !!Object.entries(regions).length && (
-          <Regions>
-            {regionTypes.map((regionType: RetailerType) => (
-              <ListingGroups key={regionLabels[regionType]} theme={regionLabels[regionType]}> 
-                {getLabel(regions[regionType], regionLabels[regionType])}
-                <ListingCards listings={get(regions[regionType], "listings")} />
-              </ListingGroups>
-            ))}
-          </Regions>
-        )}
-      </AppContent>
+      <AppContainer>
+        <AppHeader>
+          <img src={logo} alt="weedmaps logo" />
+        </AppHeader>
+        <HeroSection>
+          <ContentContainer>
+            <LocationSection>
+              <h2>
+                <MapPin fill={"#7e7979"} width={"60px"} height={"40px"} />
+                <span> {location ? location.name : ""} </span>
+                <span> {isLocating && !location ? "...locating" : ""} </span>
+              </h2>
+              <LocateButton onClick={locateMe}>
+                <Locate fill={"#7e7979"} width={"30px"} height={"20px"}/>
+                <span> Locate Me </span>
+              </LocateButton>
+            </LocationSection>
+            <TextContent>
+              Lorem Ipsum dolor sit amet, consectetur adispiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aligqua. Ut enim
+              ad minim veniam, quis.
+            </TextContent>
+          </ContentContainer>
+        </HeroSection>
+        <AppContent>
+          {error && error.length && <div> {error} </div>}
+          {regions && !!Object.entries(regions).length && (
+            <Regions>
+              {regionTypes.map((regionType: RetailerType) => (
+                <ListingGroups key={regionLabels[regionType]} theme={regionLabels[regionType]}> 
+                  {getLabel(regions[regionType], regionLabels[regionType])}
+                  <ListingCards listings={get(regions[regionType], "listings")} />
+                </ListingGroups>
+              ))}
+            </Regions>
+          )}
+        </AppContent>
+      </AppContainer>
+      <AppFooter>
+        <AppFooterBar />
+      </AppFooter>
     </AppWrapper>
   );
 }
