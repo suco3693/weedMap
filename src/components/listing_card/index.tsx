@@ -2,6 +2,7 @@ import React from "react";
 import {
   isMobile,
 } from "react-device-detect";
+import { Link } from "react-router-dom";
 import Avatar from "../avatar";
 import CardInfo from "../card_info";
 import styled from "styled-components";
@@ -20,11 +21,13 @@ const ListingCardWrapper = styled.div<{isMobile: boolean}>`
 `;
 
 
-const ListingCard = ({ listing }: { listing: any }) => ( 
+const ListingCard = ({ listing }: { listing: any }) => (
+    <Link to={`/listing/${listing.wmid}`}>
       <ListingCardWrapper isMobile={isMobile}>
         <Avatar img={`${get(listing, "avatar_image.small_url")}`} />
         <CardInfo listing={listing} />
       </ListingCardWrapper>
+    </Link> 
 );
 
 export default ListingCard;

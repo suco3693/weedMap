@@ -18,6 +18,7 @@ type Values = {
   error: string;
   setError: (error: string) => void;
   locate: (cords: LatLng) => void;
+  getListing: (wmid: number) => void;
 };
 
 export function useGlobal(
@@ -63,6 +64,11 @@ export function useGlobal(
     setIsLocating(false);
   }
 
+  async function getListing(wmid:number) {
+    const url = `https://${config.API_HOST}/discovery/v1/listings/${wmid}`;
+    console.log(url);
+  }
+
   return {
     isLocating,
     setIsLocating,
@@ -71,6 +77,7 @@ export function useGlobal(
     location,
     setLocation,
     locate,
+    getListing,
     setError,
     error
   };
