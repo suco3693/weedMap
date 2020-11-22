@@ -3,16 +3,13 @@ import get from "lodash.get";
 import {
   isMobile,
 } from "react-device-detect";
-import logo from "../assets/logo.png";
-import ListingCards from "./listing_cards";
-import getLabel from "./listing_label";
+import ListingCards from "../listing_cards";
+import getLabel from "../listing_label";
 import { 
     Locate,
     MapPin
-} from "../icons";
+} from "../../icons";
 import {
-  AppHeader,
-  AppWrapper,
   AppContainer,
   AppContent,
   Regions,
@@ -21,11 +18,9 @@ import {
   ContentContainer,
   LocationSection,
   TextContent,
-  LocateButton,
-  AppFooter,
-  AppFooterBar
+  LocateButton
 } from "./styles";
-import { GlobalContext, EMPTY } from "../context";
+import { GlobalContext, EMPTY } from "../../context";
 
 type RetailerType = "delivery" | "dispensary" | "doctor";
 const regionTypes: RetailerType[] = ["delivery", "dispensary", "doctor"];
@@ -39,7 +34,7 @@ const regionLabels: {
   doctor: "Doctors"
 };
 
-function App() {
+function Home() {
   const values = React.useContext(GlobalContext);
   if (values === EMPTY) {
     throw new Error("Component must be wrapped with <Container.Provider>");
@@ -54,11 +49,7 @@ function App() {
     }
   }
   return (
-    <AppWrapper>
       <AppContainer>
-        <AppHeader isMobile={isMobile}>
-          <img src={logo} alt="weedmaps logo" />
-        </AppHeader>
         <HeroSection>
           <ContentContainer isMobile={isMobile}>
             <LocationSection>
@@ -93,11 +84,7 @@ function App() {
           )}
         </AppContent>
       </AppContainer>
-      <AppFooter>
-        <AppFooterBar />
-      </AppFooter>
-    </AppWrapper>
   );
 }
 
-export default App;
+export default Home;

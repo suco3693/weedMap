@@ -2,7 +2,7 @@ import React from "react";
 import { AllTheProviders } from "../test-utils";
 import { render, fireEvent, act } from "@testing-library/react";
 import jest from "jest-mock";
-import App from "./App";
+import App from "../view";
 
 function setup(props?: any) {
   return (
