@@ -58,7 +58,6 @@ export const HeroSection = styled.div`
   }
 `;
 
-
 export const ContentContainer = styled.div<{isMobile: boolean}>`
   ${({isMobile})=> isMobile? "width: 100%;": "width: 60%;"}
   max-width: 1200px;
