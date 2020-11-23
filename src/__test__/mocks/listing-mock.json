@@ -1,0 +1,190 @@
+{
+    "data": {
+        "listing": {
+            "id": 64129,
+            "name": "The Roots Dispensary",
+            "slug": "the-roots-dispensary",
+            "state": "California",
+            "best_of_weedmaps": true,
+            "social_equity": false,
+            "city": "Lompoc",
+            "type": "dispensary",
+            "wmid": 761452730,
+            "latitude": 34.644147,
+            "longitude": -120.467125,
+            "web_url": "https://weedmaps.com/dispensaries/the-roots-dispensary",
+            "package_level": "listing_plus",
+            "feature_order": 1,
+            "ranking": 4.88884799650403,
+            "rating": 4.92680301399354,
+            "reviews_count": 929,
+            "avatar_image": {
+                "small_url": "https://images.weedmaps.com/dispensaries/000/064/129/avatar/square_fill/1604358324-roots_logo.png",
+                "original_url": "https://images.weedmaps.com/dispensaries/000/064/129/avatar/original/1604358324-roots_logo.png"
+            },
+            "has_sale_items": false,
+            "license_type": "hybrid",
+            "address": "805 W Laurel Ave",
+            "distance": null,
+            "zip_code": "93436",
+            "timezone": "America/Los_Angeles",
+            "intro_body": "<p></p><p> </p><p><strong>WE NEVER LEAVE OUR ROOTS, WE ONLY GROW NEW BRANCHES</strong></p><p> </p><p><strong>Welcome to The Roots Dispensary</strong>–<em>. </em>At The Roots Dispensary we proudly serve the Lompoc, Santa Maria, Solvang and Buelton community with selected quality cannabis products at a competitive price. </p><p> </p><p><strong>THE ROOTS IN-STORE DAILY DEALS</strong></p><p>*<strong>Munchie Mondays</strong>- 10% Off ALL Edibles ALL Day </p><p>*<strong>Terpy Tuesdays</strong>- 10% Off ALL Cartridges/Pods ALL Day</p><p>*<strong>Waxy Wednesdays</strong>- 10% Off ALL Concentrates ALL Day</p><p>*<strong>Thirsty Thursdays</strong>- 10% Off ALL Drinks ALL Day</p><p>*<strong>Flower Fridays</strong>- 10% Off ALL Flower ALL Day</p><p>*<strong>CBD Saturdays</strong>- 10% Off ALL CBD Products ALL Day</p><p>*<strong>Sundaze Smoke Sesh</strong>- Taxes On Us!!!</p><p><strong>**Wake N Bake- 20% Off Entire Purchase From 9am-10am (Everyday)**</strong></p><p><strong>**Happy Hour-15% OFF Entire Purchase 4pm-5pm(Everyday)**</strong></p><p><br></p><p> </p><p><em>*Cannot Be Combined With Other Specials or Promotions. Can be canceled anytime at dispensaries discretion. Specials not valid for deliveries.</em></p><p> </p><p> </p><p><strong>The Roots Dispensary team is committed to delivering exceptional customer service and educational insight. We encourage customers to come in and speak with our friendly and knowledgeable staff to find out what form of cannabis best suits your needs. </strong></p><p> </p>",
+            "support_cause_link": null,
+            "gofundme_link": null,
+            "static_map_url": "https://staticmap.weedmaps.com/static_map/13/34.644147/-120.467125/402/147/map.png",
+            "open_now": true,
+            "closes_in": 392,
+            "todays_hours_str": " 9:00am -  9:00pm",
+            "min_age": 21,
+            "region_id": 590,
+            "promo_code": null,
+            "menu_items_count": 670,
+            "verified_menu_items_count": 0,
+            "endorsement_badge_count": 0,
+            "is_published": true,
+            "online_ordering": {
+                "is_orders_enabled": true,
+                "is_logistics_enabled": true,
+                "after_hours_enabled": true,
+                "enabled_for_pickup": true,
+                "enabled_for_delivery": false,
+                "identification_required": true,
+                "purchase_min": {
+                    "cents": 0,
+                    "currency": "USD",
+                    "amount": 0.0
+                },
+                "fee": {
+                    "cents": 0,
+                    "currency": "USD",
+                    "amount": 0.0
+                },
+                "eta_min": 30,
+                "eta_max": 60,
+                "display_eta": false,
+                "wm_service_fee": {
+                    "cents": 0,
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            "retailer_services": [
+                "storefront",
+                "pickup"
+            ],
+            "has_curbside_pickup": true,
+            "has_featured_deal": false,
+            "menu_id": 761452730,
+            "email": "hello@visittheroots.com",
+            "phone_number": "(805) 322-8032",
+            "description": "<p></p><p><strong>**21 FOR ADULT USE**  </strong></p> <p><em>** Also servng patients age 18 to 20 with valid doctors recommendation!!**</em></p> <p>~<strong>FULLY LICENSED AND COMPLIANT DISPENSARY-</strong></p> <p>--------------------------------------</p> <p><strong>*WEEDMAPS ORDERS CANNOT PARTICIPATE IN PAD SPECIALS.*</strong></p> <p>***We are constantly updating our menu all day, everyday, as we run out of items, and restock daily. Please be patient with us. If you have ANY questions about what we may or may not have in stock, feel free to give us a call and we will gladly check for you! We apologize in advance but any questions regarding price may not be discussed over the phone. Thank You!***</p>",
+            "first_time_announcement": "<p></p><p>First time visitors Sign up for our <strong>Loyalty Rewards</strong> program. Sign-up includes the option to redeem your points for a 10% off coupon, OR save those points for another deal. </p> <p><strong>**See Details Section For Daily Deals**</strong></p> <p> </p>",
+            "announcement": "<p></p><p><strong>**All Menu items include the mandatory State Excise Tax** (California sales tax of 7.75% not included in menu pricing) test</strong></p>",
+            "announcement_updated_at": "2020-05-05T21:32:30.637Z",
+            "country": "US",
+            "website": "http://www.visittheroots.com",
+            "has_handicap_access": true,
+            "has_photos": false,
+            "has_videos": false,
+            "accepts_credit_cards": false,
+            "has_testing": false,
+            "is_recreational": false,
+            "has_atm": true,
+            "has_security_guard": true,
+            "is_verified_seller": false,
+            "has_endorsement_badges": false,
+            "has_age_gate": true,
+            "license_number": "C10-0000335-LIC",
+            "licenses": [
+                {
+                    "type": "Adult-Use Retail",
+                    "number": "C10-0000335-LIC"
+                }
+            ],
+            "business_hours": {
+                "sunday": {
+                    "open": "9:00am",
+                    "close": "6:00pm"
+                },
+                "monday": {
+                    "open": "9:00am",
+                    "close": "9:00pm"
+                },
+                "tuesday": {
+                    "open": "9:00am",
+                    "close": "9:00pm"
+                },
+                "wednesday": {
+                    "open": "9:00am",
+                    "close": "9:00pm"
+                },
+                "thursday": {
+                    "open": "9:00am",
+                    "close": "9:00pm"
+                },
+                "friday": {
+                    "open": "9:00am",
+                    "close": "9:00pm"
+                },
+                "saturday": {
+                    "open": "9:00am",
+                    "close": "9:00pm"
+                }
+            },
+            "social": {
+                "facebook_id": "@therootsdispensary",
+                "instagram_id": "therootsdispensary",
+                "twitter_id": "@therootslompoc",
+                "youtube_ids": []
+            },
+            "region": {
+                "id": 590,
+                "name": "Lompoc / Solvang",
+                "slug": "lompoc-solvang",
+                "region_path": "united-states/california/lompoc-solvang"
+            },
+            "member_since": "2019",
+            "price_aggregations": {
+                "unit": {
+                    "units": "1",
+                    "min": 0.01,
+                    "max": 95.0
+                },
+                "gram": [
+                    {
+                        "units": "1",
+                        "min": 8.0,
+                        "max": 95.0
+                    },
+                    {
+                        "units": "1/2",
+                        "min": 1.0,
+                        "max": 40.0
+                    }
+                ],
+                "ounce": [
+                    {
+                        "units": "1/8",
+                        "min": 22.0,
+                        "max": 65.0
+                    },
+                    {
+                        "units": "1/4",
+                        "min": 45.0,
+                        "max": 80.0
+                    },
+                    {
+                        "units": "1",
+                        "min": 165.0,
+                        "max": 165.0
+                    },
+                    {
+                        "units": "1/2",
+                        "min": 130.0,
+                        "max": 130.0
+                    }
+                ]
+            }
+        }
+    }
+}

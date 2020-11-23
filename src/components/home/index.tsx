@@ -70,10 +70,10 @@ function Home() {
             </TextContent>
           </ContentContainer>
         </HeroSection>
-        <AppContent isMobile={isMobile}>
+        <AppContent isMobile={isMobile} data-testid="appCont">
           {error && error.length && <div> {error} </div>}
           {regions && !!Object.entries(regions).length && (
-            <Regions isMobile={isMobile}>
+            <Regions isMobile={isMobile} data-testid="regions">
               {regionTypes.map((regionType: RetailerType) => (
                 <ListingGroups key={regionLabels[regionType]} theme={regionLabels[regionType]}> 
                   {getLabel(regions[regionType], regionLabels[regionType])}

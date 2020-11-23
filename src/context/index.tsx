@@ -39,6 +39,7 @@ export function useGlobal(
   const [error, setError] = React.useState("");
 
   async function locate(coords: LatLng) {
+    
     const params = [
       `include${encodeURIComponent("[]")}=regions.listings`,
       `latlng=${encodeURIComponent(`${coords.latitude},${coords.longitude}`)}`
@@ -54,6 +55,7 @@ export function useGlobal(
       }
     };
     setIsLocating(true);
+
     fetch(url, options)
       .then(res => {
         // check if response is ok and stream is done before turning to json

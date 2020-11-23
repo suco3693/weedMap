@@ -30,7 +30,7 @@ function Location() {
     useEffect(setListingFromURL,[])
     
     return (
-        <ListingWrapper isMobile={isMobile}>
+        <ListingWrapper isMobile={isMobile} data-testid="location">
             <LocationCard listing={listing} />
             <LocationHours hours={listing.business_hours} />
         </ListingWrapper>

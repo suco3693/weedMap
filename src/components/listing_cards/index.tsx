@@ -8,7 +8,7 @@ const CardsContainer = styled.div`
 
 
 const ListingCards = ({ listings }: { listings: any }) => (
-  <CardsContainer>
+  <CardsContainer >
     {listings.map((listing: any) => (
       <ListingCard listing={listing} key={listing.id} />
     ))}
