@@ -1,4 +1,5 @@
 import React from "react";
+import {getStateCodeByStateName } from "us-state-codes";
 import {
     InfoWrapper,
     LocationWrapper,
@@ -6,13 +7,14 @@ import {
 } from "./styles";
 import Stars from "../stars";
 
-//TODO convert listing.state to Abbrive
-
+const convertToStateCode = (state: string): string =>{
+  return getStateCodeByStateName(state) === null? state : getStateCodeByStateName(state);
+}
 
 const CardInfo = ({ listing }: { listing: any }) => (
   <InfoWrapper>
     <LocationWrapper>
-        <div> {listing.city}, {listing.state}  </div>
+        <div> {listing.city}, {convertToStateCode(listing.state)}  </div>
         <div> | </div>
         <div> {listing.distance.toFixed(0)}mi </div>
     </LocationWrapper>
