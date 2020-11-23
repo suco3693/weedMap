@@ -22,7 +22,7 @@ const ListingCardWrapper = styled.div<{isMobile: boolean}>`
 
 
 const ListingCard = ({ listing }: { listing: any }) => (
-    <Link to={`/listing/${listing.wmid}`}>
+    <Link to={`/location/${listing.wmid}`}>
       <ListingCardWrapper isMobile={isMobile}>
         <Avatar img={`${get(listing, "avatar_image.small_url")}`} />
         <CardInfo listing={listing} />

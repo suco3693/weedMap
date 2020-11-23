@@ -4,6 +4,7 @@ import * as config from "../constants/config";
 type IsLocating = boolean;
 type Regions = any;
 type Location = any;
+type Listing = any;
 type LatLng = {
   latitude: number;
   longitude: number;
@@ -14,11 +15,13 @@ type Values = {
   regions: Regions;
   setRegions: (regions: Regions) => void;
   location: Location;
-  setLocation: (location: Location) => void;
+  setLocation: (location: Location) => void; 
+  setListing: (listing: Listing) => void;
+  getListing: (wmid: number) => void;
   error: string;
   setError: (error: string) => void;
   locate: (cords: LatLng) => void;
-  getListing: (wmid: number) => void;
+  listing: Listing;
 };
 
 export function useGlobal(
@@ -26,11 +29,13 @@ export function useGlobal(
     isLocating?: IsLocating;
     regions?: Regions;
     location?: Location;
+    listing? : Listing;
   } = {}
 ): Values {
   const [isLocating, setIsLocating] = React.useState(!!initialState.isLocating);
   const [regions, setRegions] = React.useState(initialState.regions || {});
   const [location, setLocation] = React.useState(initialState.location || {});
+  const [listing, setListing] = React.useState(initialState.listing || {});
   const [error, setError] = React.useState("");
 
   async function locate(coords: LatLng) {
@@ -66,7 +71,24 @@ export function useGlobal(
 
   async function getListing(wmid:number) {
     const url = `https://${config.API_HOST}/discovery/v1/listings/${wmid}`;
-    console.log(url);
+
+    const options = {
+      method: "GET",
+      headers: {
+        Accept: "application/json"
+      }
+    };
+
+    fetch(url,options)
+      .then((res)=>{
+        if(res.ok){
+          return res.json();
+        }
+      })
+      .then((json: any)=>{
+        setListing(json.data.listing);
+      })
+      .catch(()=> setError("Listing did not load properly"))
   }
 
   return {
@@ -78,6 +100,8 @@ export function useGlobal(
     setLocation,
     locate,
     getListing,
+    setListing,
+    listing,
     setError,
     error
   };
