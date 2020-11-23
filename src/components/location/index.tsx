@@ -6,6 +6,7 @@ import {
 import styled from "styled-components";
 import { GlobalContext, EMPTY } from "../../context";
 import LocationCard from "../location_card";
+import LocationHours from "../location_hours";
 
 const ListingWrapper = styled.div<{isMobile: boolean}>`
     display: flex;
@@ -31,7 +32,7 @@ function Location() {
     return (
         <ListingWrapper isMobile={isMobile}>
             <LocationCard listing={listing} />
-            {/* Hours */}
+            <LocationHours hours={listing.business_hours} />
         </ListingWrapper>
     )
 };

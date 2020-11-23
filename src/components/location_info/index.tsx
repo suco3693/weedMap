@@ -11,6 +11,7 @@ import {
 
 
 const LocationInfoCard= ({ listing }: { listing: any }) => {
+    let address = listing.address !== "null" ?  listing.address: "";
     if(isMobile){
         return (
             <LocationInfoCardWrapper>
@@ -18,7 +19,7 @@ const LocationInfoCard= ({ listing }: { listing: any }) => {
                     <h3>{listing.name}</h3>
                     <Stars rating={listing.rating} />
                 </HeaderWrapper>
-                <h5>{listing.address}</h5>
+                <h5>{address}</h5>
                 <h5>{listing.phone_number}</h5>
             </LocationInfoCardWrapper>
         )
@@ -29,7 +30,7 @@ const LocationInfoCard= ({ listing }: { listing: any }) => {
                     <h1>{listing.name}</h1>
                     <Stars rating={listing.rating} />
                 </HeaderWrapper>
-                <h3>{listing.address}</h3>
+                <h3>{address}</h3>
                 <h3>{listing.phone_number}</h3>
             </LocationInfoCardWrapper>
         )
