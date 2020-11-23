@@ -13,10 +13,14 @@ const StarWrapper = styled.div`
   }
 `;
 
-const Stars = ({ rating }: { rating: number }) => (
+let roundNumber = (rating: string): number =>{
+    return parseFloat(parseFloat(rating).toFixed(1));
+}
+
+const Stars = ({ rating }: { rating: string }) => (
   <StarWrapper>
-    <StarSet rating={rating} />
-    <div> {rating} </div>
+    <StarSet rating={roundNumber(rating)} />
+    <div> {roundNumber(rating)} </div>
   </StarWrapper>
 );
 
